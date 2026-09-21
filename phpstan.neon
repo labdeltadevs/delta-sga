@@ -1,0 +1,16 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+    - vendor/nesbot/carbon/extension.neon
+
+parameters:
+    paths:
+        - app/
+        - bootstrap/app.php
+        - config/
+        - database/
+        - routes/
+
+    level: 7
+    ignoreErrors:
+        - '#Property App\\Services\\HolidayService~\$cache has unknown class App\\Services\\Carbon as its type\.#'
+        - '#Method App\\Models\\LeaveRequest::scopeVisibleFor\\(\\) has parameter \\$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types: TModel\.#'

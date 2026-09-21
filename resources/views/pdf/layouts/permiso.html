@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Solicitud de Permiso/Licencia/Vacaciones</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; font-size: 13px; background: #fff; color: #000; }
+  .page { width: 100%; border: 1px solid #000; }
+  table { border-collapse: collapse; width: 100%; }
+  td, th { border: 1px solid #000; padding: 4px 6px; vertical-align: middle; }
+  .no-border td { border: none; }
+  .header-logo { width: 140px; text-align: center; vertical-align: middle; }
+  .header-logo img { max-width: 110px; }
+  .header-title { text-align: center; font-weight: bold; font-size: 14px; }
+  .header-sub { font-size: 12px; }
+  .section-title { font-weight: bold; margin: 12px 0 8px; font-size: 14px; }
+  .form-title { text-align: center; font-weight: bold; font-size: 15px; margin: 10px 0; }
+  .line { border-bottom: 1px solid #000; display: inline-block; min-width: 200px; }
+  .checkbox { display: inline-block; width: 14px; height: 14px; border: 1px solid #000; margin-right: 6px; vertical-align: middle; }
+  .box { border: 1px solid #000; padding: 3px 8px; display: inline-block; margin-right: 8px; font-size: 12px; }
+  .small-box { width: 18px; height: 16px; border: 1px solid #000; display: inline-block; vertical-align: middle; }
+  .hours-table { width: 180px; border: 1px solid #000; }
+  .hours-table td { text-align: center; padding: 2px 4px; font-size: 12px; }
+  .sign-table td { height: 55px; text-align: center; font-size: 11px; vertical-align: top; padding-top: 4px; }
+  .note { font-size: 11px; margin: 8px 0; }
+  .divider { border-top: 1px dashed #000; margin: 15px 0; }
+  .label { font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="page">
+  <table>
+    <tr>
+      <td class="header-logo" rowspan="3">
+        <div style="font-size:11px;line-height:1.2;">
+          <div style="font-weight:bold;">LABORATORIOS</div>
+          <div style="font-size:18px;font-weight:bold;">DELTA S.A.</div>
+        </div>
+      </td>
+      <td class="header-title" colspan="3">RECURSOS HUMANOS</td>
+    </tr>
+    <tr>
+      <td class="header-sub" style="width:25%;">ETIQUETA</td>
+      <td class="header-sub" style="width:30%;">ETQ-RHH-0002</td>
+      <td class="header-sub" style="width:20%;">Versión &nbsp; 0</td>
+    </tr>
+    <tr>
+      <td class="header-title" colspan="3">SOLICITUD DE PERMISO/ LICENCIA/ VACACIONES</td>
+    </tr>
+  </table>
+
+  <div style="padding:12px 15px;">
+    <div class="section-title">1. DESARROLLO</div>
+    <div class="form-title">SOLICITUD DE PERMISO/ LICENCIA/ VACACIONES</div>
+
+    <div style="margin:6px 0;">
+      El Señor(a) <span class="line" style="min-width:320px;">{{solicitante}}</span> solicita:
+    </div>
+
+    <div style="margin-top:12px;">
+      <span class="checkbox">{{c_permiso}}</span> Permiso o licencia por motivo <span class="line" style="min-width:280px;">{{motivo}}</span>
+    </div>
+
+    <div style="margin-top:8px;">
+      <table class="hours-table" style="margin-left:auto;">
+        <tr>
+          <td rowspan="2" style="width:70px;">Horas<br>de &nbsp;&nbsp; a</td>
+          <td>Día completo <span class="small-box">{{c_completa}}</span></td>
+        </tr>
+        <tr>
+          <td>Medio día <span class="small-box">{{c_media}}</span></td>
+        </tr>
+      </table>
+    </div>
+
+    <div style="margin-top:8px;">
+      El/los días <span class="line" style="min-width:300px;">{{fecha_desde}} al {{fecha_hasta}}</span>
+    </div>
+
+    <div style="margin:10px 0 6px;">Se considera el permiso</div>
+    <div>
+      <span class="box"><span class="small-box">{{c_vacacion}}</span> A cuenta de vacación</span>
+      <span class="box"><span class="small-box">{{c_descuento}}</span> Descuento por planilla</span>
+      <span class="box"><span class="small-box">{{c_sin_afectar}}</span> Sin afectar planilla ni vacación</span>
+    </div>
+
+    <div style="margin-top:10px;">
+      Observaciones <span class="line" style="min-width:480px;">{{observaciones}}</span>
+    </div>
+
+    <table class="sign-table" style="margin-top:12px;">
+      <tr>
+        <td style="width:20%;">Firma BPM de trabajador<br><img src="{{firma_bpm}}" style="max-width:100%;max-height:50px;" /></td>
+        <td style="width:20%;">Autorizado por (firma)<br><span style="font-size:9px;">{{autorizado_por}}</span><br><span style="font-size:8px;">{{firma_digital}}</span></td>
+        <td style="width:20%;">Fecha de Autorización<br>(dd/mm/aa)<br>{{fecha_aprobacion}}</td>
+        <td style="width:20%;">Recibido por (firma)<br>{{recibido_por}}</td>
+        <td style="width:20%;">Fecha (dd/mm/aa)<br>{{fecha_recepcion}}</td>
+      </tr>
+    </table>
+
+    <div class="note">Esta papeleta debe ser entregada a RR.HH. máximo 24 horas después del día de permiso solicitado</div>
+  </div>
+</div>
+</body>
+</html>
